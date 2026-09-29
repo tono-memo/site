@@ -14,6 +14,12 @@ const productCopy = z.object({
   availabilityNote: z.string().optional(),
 });
 
+/** 产品截图文件在 public/products/<id>/ 下，说明文字随页面语言切换 */
+const productScreenshot = z.object({
+  image: z.string(),
+  alt: z.record(z.enum(LOCALES), z.string()),
+});
+
 /**
  * 产品注册表：src/content/products/<id>.yaml，文件名即 URL 段。
  * 加一个 app = 加一个 yaml，不需要新建路由文件。
@@ -32,6 +38,7 @@ const products = defineCollection({
     appStoreUrl: z.url().nullable().default(null),
     testFlightUrl: z.url().nullable().default(null),
     operatingSystem: z.string().optional(),
+    screenshots: z.array(productScreenshot).default([]),
     /** 默认语言必须有文案，其他语言可缺（缺时回退到默认语言） */
     copy: z
       .record(z.enum(LOCALES), productCopy)

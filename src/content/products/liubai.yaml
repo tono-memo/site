@@ -19,6 +19,25 @@ testFlightUrl: https://testflight.apple.com/join/RxvjfM4U
 
 operatingSystem: iOS, iPadOS
 
+# 来自 App Store 的官方截图；路径相对于 public/。
+screenshots:
+  - image: products/liubai/home.webp
+    alt:
+      zh-CN: 留白首页，展示随笔卡片和日历入口
+      en: LiuBai home screen with note cards and calendar access
+  - image: products/liubai/daily-prompt.webp
+    alt:
+      zh-CN: 每日一问写作界面
+      en: Daily prompt writing screen
+  - image: products/liubai/photo-note.webp
+    alt:
+      zh-CN: 照片札记界面
+      en: Photo note screen
+  - image: products/liubai/voice-note.webp
+    alt:
+      zh-CN: 语音片段记录界面
+      en: Voice note recording screen
+
 copy:
   zh-CN:
     titleSuffix: 随笔记录
